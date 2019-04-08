@@ -3,6 +3,7 @@ This module descibes how to load a dataset from a  file.
 fileid = 0 trains
        = 1 test
 """
+
 def loaddata(filename,fileid):
     with open(filename,'r') as f:
         lines=f.readlines()
@@ -38,8 +39,7 @@ def loaddata(filename,fileid):
             else:
                 itemid,score=line.split('  ')
                 data_list.append((userid,itemid,float(score)))
-                if userid == '1':
-                    print(userid)
+
         index+=n
     print('load data finished')
     return data_list
